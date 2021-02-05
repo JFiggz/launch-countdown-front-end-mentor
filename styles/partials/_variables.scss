@@ -1,7 +1,16 @@
 // Primary colour variables
 $default-light: hsl(0, 0%, 100%);
-$primary-text: hsl(345, 95%, 68%);
+$primary-text: rgba(251,96,135, 0.7);
 $secondary-text: hsl(237, 18%, 59%);
 $light-accent: hsl(236, 21%, 26%);
 $darker-accent: hsl(235, 16%, 14%);
 $darkest-accent: hsl(234, 17%, 12%);
+$footer: #30243a;
+$card-lower:hsl(236, 21%, 26%);
+$card-upper: #2c2c44;
+$icons: hsl(237, 18%, 59%);
+$icons-hover: hsl(345, 95%, 68%);
+
+
+//Padding spaceing
+$padding: 5px;

@@ -11,4 +11,170 @@ body {
   font-family: "Red Hat Text", sans-serif;
   font-weight: 700;
   font-size: 0.875rem;
+}
+
+.launch__header {
+  color: white;
+  font-size: 1.15rem;
+  letter-spacing: 0.3rem;
+  text-align: center;
+}
+
+.time-card__title {
+  color: #8486a9;
+  font-size: 0.45rem;
+  letter-spacing: 0.18rem;
+  text-align: center;
+}
+
+.time-card__text {
+  color: rgba(251, 96, 135, 0.7);
+  font-size: 2rem;
+  letter-spacing: 0.01rem;
+}
+
+.launch {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/bg-stars.svg"), linear-gradient(180deg, #191a24 20%, #30243a);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.launch__header {
+  margin: 0 0 45px;
+}
+.launch__container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 35px 35px 0;
+}
+.launch__time-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.time-card {
+  flex-shrink: 0;
+  flex-basis: 21%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.time-card__container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.time-card__upper {
+  width: 100%;
+  flex-basis: 50%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #2c2c44;
+}
+.time-card__lower {
+  width: 100%;
+  flex-basis: 50%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #343650;
+  position: relative;
+}
+.time-card__lower::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: black;
+  top: -3px;
+  right: -3px;
+}
+.time-card__lower::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: black;
+  top: -3px;
+  left: -3px;
+}
+.time-card__text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.time-card__title {
+  margin: 15px 0 0;
+}
+
+.footer {
+  background-image: url("../images/pattern-hills.svg");
+  background-position: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer__social-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.footer__link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  margin: 0 15px;
+}
+.footer__icon {
+  width: 25px;
+  height: 25px;
+}
+.footer__icon path {
+  fill: #8486a9;
+}
+.footer__icon:hover path {
+  fill: #fb6087;
 }/*# sourceMappingURL=main.css.map */

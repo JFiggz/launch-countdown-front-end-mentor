@@ -1,0 +1,135 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./extends" as *;
+
+.launch{
+     width: 100%;
+     height: 100vh;
+     background: url("../images/bg-stars.svg"), linear-gradient(180deg, $darkest-accent 20%, $footer);
+     background-position: center;
+     background-repeat: no-repeat;
+     @include flex(column, center);
+
+     &__header{
+          @extend %main-header;
+          margin: 0 0 spaceIncr(9);
+     }
+
+     &__container{
+          height: 70vh;
+          @include flex(column, center,center);
+          padding: spaceIncr(7) spaceIncr(7) 0;
+     }
+
+     &__time-container{
+          @include flex(row,space-between);
+          width: 100%;
+     }
+}
+
+.time-card{
+     flex-shrink: 0;
+     flex-basis: 21%;
+     @include flex(column);
+     overflow: hidden;
+
+     &__container{
+          width: 100%;
+          height: 60px;
+          @include flex(column, center);
+          position: relative;
+     }
+
+     &__upper{
+          width: 100%;
+          flex-basis: 50%;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          background-color: $card-upper;
+
+     }
+
+     &__lower{
+          width: 100%;
+          flex-basis: 50%;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          background-color: $card-lower;
+          position: relative;
+          
+          &::before{
+               content: "";
+               display: block;
+               position: absolute;
+               width: 6px;
+               height: 6px;
+               border-radius: 50%;
+               background-color: black;
+               top: -3px;
+               right: -3px;
+          }
+
+          &::after{
+               content: "";
+               display: block;
+               position: absolute;
+               width: 6px;
+               height: 6px;
+               border-radius: 50%;
+               background-color: black;
+               top: -3px;
+               left: -3px;
+          }
+     }
+
+     &__text{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          @include flex(row,center,center);
+          @extend %time-text;
+          margin: 0;
+     }
+
+     &__title{
+          @extend %time-header;
+          margin: spaceIncr(3) 0 0;
+     }
+}
+
+
+.footer{
+     background-image: url("../images/pattern-hills.svg");
+     background-position: 80%;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 30vh;
+     padding: spaceIncr(7);
+     @include flex(column, flex-end, center, wrap);
+
+     &__social-container{
+          @include flex(row, center);
+     }
+
+     &__link{
+          @include flex();
+          margin: 0 spaceIncr(3);
+     }
+
+     &__icon{
+          width: 25px;
+          height: 25px;
+
+          path{
+               fill: $icons;
+          }
+
+          &:hover{
+               path{
+                    fill: $icons-hover;
+               }
+          }
+     }
+}
