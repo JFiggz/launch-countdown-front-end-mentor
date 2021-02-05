@@ -1,0 +1,11 @@
+@keyframes card-flip{
+     from{
+          transform: translateZ(0) rotateX(0deg);
+          perspective: 500px;
+     }
+
+     to{
+          transform: translateZ(100px) rotateX(0.5turn);
+          perspective: 500px;
+     }
+}

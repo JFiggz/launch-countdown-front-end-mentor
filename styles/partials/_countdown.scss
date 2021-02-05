@@ -1,6 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 @use "./extends" as *;
+@use "./animations" as *;
 
 .launch{
      width: 100%;
@@ -32,30 +33,57 @@
      flex-basis: 21%;
      @include flex(column);
      overflow: hidden;
+     transform-style: preserve-3d;
 
      &__container{
           width: 100%;
           height: 60px;
           @include flex(column, center);
           position: relative;
+          transform-style: preserve-3d;
+     }
+
+     &__back{
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          background-color: $card-upper;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          z-index: -1;
+          overflow: hidden;
      }
 
      &__upper{
           width: 100%;
-          flex-basis: 50%;
+          height: 50%;
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
           background-color: $card-upper;
+          position: relative;
+          overflow: hidden;
+          transform-origin: bottom center;
+          perspective: 500px;
+          // transition: all 1s linear;
 
+          &:active{
+               animation-name: card-flip;
+               animation-direction: normal;
+               animation-timing-function: linear;
+               animation-duration: 1s;
+          }
      }
 
      &__lower{
           width: 100%;
-          flex-basis: 50%;
+          height: 50%;
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
           background-color: $card-lower;
           position: relative;
+          overflow: hidden;
           
           &::before{
                content: "";
@@ -85,12 +113,20 @@
      &__text{
           position: absolute;
           width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
+          height: 200%;
           @include flex(row,center,center);
           @extend %time-text;
           margin: 0;
+
+          &--upper{
+               top: 0;
+               left: 0;
+          }
+
+          &--lower{
+               bottom: 0;
+               left: 0;
+          }
      }
 
      &__title{

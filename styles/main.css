@@ -33,6 +33,27 @@ body {
   letter-spacing: 0.01rem;
 }
 
+@-webkit-keyframes card-flip {
+  from {
+    transform: translateZ(0) rotateX(0deg);
+    perspective: 500px;
+  }
+  to {
+    transform: translateZ(100px) rotateX(0.5turn);
+    perspective: 500px;
+  }
+}
+
+@keyframes card-flip {
+  from {
+    transform: translateZ(0) rotateX(0deg);
+    perspective: 500px;
+  }
+  to {
+    transform: translateZ(100px) rotateX(0.5turn);
+    perspective: 500px;
+  }
+}
 .launch {
   width: 100%;
   height: 100vh;
@@ -75,6 +96,7 @@ body {
   align-items: stretch;
   flex-wrap: nowrap;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 .time-card__container {
   width: 100%;
@@ -85,21 +107,49 @@ body {
   align-items: stretch;
   flex-wrap: nowrap;
   position: relative;
+  transform-style: preserve-3d;
 }
-.time-card__upper {
-  width: 100%;
-  flex-basis: 50%;
+.time-card__back {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: #2c2c44;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
+  overflow: hidden;
+}
+.time-card__upper {
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #2c2c44;
+  position: relative;
+  overflow: hidden;
+  transform-origin: bottom center;
+  perspective: 500px;
+}
+.time-card__upper:active {
+  -webkit-animation-name: card-flip;
+          animation-name: card-flip;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 .time-card__lower {
   width: 100%;
-  flex-basis: 50%;
+  height: 50%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: #343650;
   position: relative;
+  overflow: hidden;
 }
 .time-card__lower::before {
   content: "";
@@ -126,15 +176,21 @@ body {
 .time-card__text {
   position: absolute;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  height: 200%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   margin: 0;
+}
+.time-card__text--upper {
+  top: 0;
+  left: 0;
+}
+.time-card__text--lower {
+  bottom: 0;
+  left: 0;
 }
 .time-card__title {
   margin: 15px 0 0;
