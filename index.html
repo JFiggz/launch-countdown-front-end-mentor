@@ -19,14 +19,19 @@
       <section class="launch__time-container">
         <div class="time-card" id="days">
           <div class="time-card__container">
-            <span class="time-card__back">
-              <p class="time-card__text time-card__text--upper">XX</p>
-            </span>
             <span class="time-card__upper">
-              <p class="time-card__text time-card__text--upper">08</p>
+              <p id="next-num-day" class="time-card__text time-card__text--upper">XX</p>
             </span>
+            <div class="time-card__dynamic-panel">
+              <span class="time-card__panel time-card__panel--back">
+                <p id="next-num-day" class="time-card__text time-card__text--upper">XX</p>
+              </span>
+              <span class="time-card__panel time-card__panel-front">
+                <p id="curr-num-day" class="time-card__text time-card__text--upper">08</p>
+              </span>
+            </div>
             <span class="time-card__lower">
-              <p class="time-card__text time-card__text--lower">08</p>
+              <p id="curr-num-day" class="time-card__text time-card__text--lower">08</p>
             </span>
           </div>
           <h2 class="time-card__title">DAYS</h2>
@@ -35,13 +40,18 @@
         <div class="time-card" id="hours">
           <div class="time-card__container">
             <span class="time-card__back">
-              <p class="time-card__text time-card__text--upper">XX</p>
+              <p id="next-num-hour" class="time-card__text time-card__text--upper">11</p>
             </span>
-            <span class="time-card__upper">
-              <p class="time-card__text time-card__text--upper">23</p>
-            </span>
+            <div class="time-card__dynamic-panel">
+              <span class="time-card__upper time-card__reverse">
+                <p id="next-num-hour" class="time-card__text time-card__text--upper">11</p>
+              </span>
+              <span class="time-card__upper">
+                <p id="curr-num-hour" class="time-card__text time-card__text--upper">23</p>
+              </span>
+            </div>
             <span class="time-card__lower">
-              <p class="time-card__text time-card__text--lower">23</p>
+              <p id="curr-num-hour" class="time-card__text time-card__text--lower">23</p>
             </span>
           </div>
           <h2 class="time-card__title">HOURS</h2>
@@ -50,13 +60,18 @@
         <div class="time-card" id="minutes">
           <div class="time-card__container">
             <span class="time-card__back">
-              <p class="time-card__text time-card__text--upper">XX</p>
+              <p id="next-num-minute" class="time-card__text time-card__text--upper">XX</p>
             </span>
-            <span class="time-card__upper">
-              <p class="time-card__text time-card__text--upper">55</p>
-            </span>
+            <div class="time-card__dynamic-panel">
+              <span class="time-card__upper time-card__reverse">
+                <p id="next-num-minute" class="time-card__text time-card__text--upper">XX</p>
+              </span>
+              <span class="time-card__upper">
+                <p id="curr-num-minute" class="time-card__text time-card__text--upper">55</p>
+              </span>
+            </div>
             <span class="time-card__lower">
-              <p class="time-card__text time-card__text--lower">55</p>
+              <p id="curr-num-minute" class="time-card__text time-card__text--lower">55</p>
             </span>
           </div>
           <h2 class="time-card__title">MINUTES</h2>
@@ -65,13 +80,18 @@
         <div class="time-card" id="seconds">
           <div class="time-card__container">
             <span class="time-card__back">
-              <p class="time-card__text time-card__text--upper">XX</p>
+              <p id="next-num-second" class="time-card__text time-card__text--upper">XX</p>
             </span>
-            <span class="time-card__upper">
-              <p class="time-card__text time-card__text--upper">41</p>
-            </span>
+            <div class="time-card__dynamic-panel">
+              <span class="time-card__upper time-card__reverse">
+                <p id="next-num-second" class="time-card__text time-card__text--upper">XX</p>
+              </span>
+              <span class="time-card__upper">
+                <p id="curr-num-second" class="time-card__text time-card__text--upper">41</p>
+              </span>
+            </div>
             <span class="time-card__lower">
-              <p class="time-card__text time-card__text--lower">41</p>
+              <p id="curr-num-second" class="time-card__text time-card__text--lower">41</p>
             </span>
           </div>
           <h2 class="time-card__title">SECONDS</h2>

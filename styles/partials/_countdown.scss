@@ -43,37 +43,55 @@
           transform-style: preserve-3d;
      }
 
-     &__back{
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-          background-color: $card-upper;
+     &__dynamic-panel{
           position: absolute;
-          top: 0;
-          left: 0;
           width: 100%;
           height: 50%;
-          z-index: -1;
-          overflow: hidden;
-     }
-
-     &__upper{
-          width: 100%;
-          height: 50%;
+          top:0;
+          left:0;
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
-          background-color: $card-upper;
-          position: relative;
           overflow: hidden;
+          transform-style: preserve-3d;
           transform-origin: bottom center;
           perspective: 500px;
-          // transition: all 1s linear;
-
+          
           &:active{
                animation-name: card-flip;
                animation-direction: normal;
                animation-timing-function: linear;
                animation-duration: 1s;
+               animation-fill-mode: forwards;
           }
+     }
+
+     &__panel{
+          width: 100%;
+          height: 100%;
+          position: relative;
+          background-color: $card-upper;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+
+          &--back{
+               @extend %card-indents-top;
+          }
+
+          &--front{
+               @extend %card-indents-bottom;
+          }
+          
+     }
+
+     &__upper{
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          background-color: $card-upper;
+          width: 100%;
+          height: 50%;
+          overflow: hidden;
+          position: relative;
+          @extend %card-indents-bottom;
      }
 
      &__lower{
@@ -82,32 +100,9 @@
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
           background-color: $card-lower;
-          position: relative;
           overflow: hidden;
-          
-          &::before{
-               content: "";
-               display: block;
-               position: absolute;
-               width: 6px;
-               height: 6px;
-               border-radius: 50%;
-               background-color: black;
-               top: -3px;
-               right: -3px;
-          }
-
-          &::after{
-               content: "";
-               display: block;
-               position: absolute;
-               width: 6px;
-               height: 6px;
-               border-radius: 50%;
-               background-color: black;
-               top: -3px;
-               left: -3px;
-          }
+          position: relative;
+          @extend %card-indents-top;
      }
 
      &__text{
