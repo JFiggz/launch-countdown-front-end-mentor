@@ -20,20 +20,20 @@ body {
   text-align: center;
 }
 
-.time-card__title {
+.time__header {
   color: #8486a9;
   font-size: 0.45rem;
   letter-spacing: 0.18rem;
   text-align: center;
 }
 
-.time-card__text {
+.time__text {
   color: rgba(251, 96, 135, 0.7);
   font-size: 2rem;
   letter-spacing: 0.01rem;
 }
 
-.time-card__panel--front::before, .time-card__upper::before {
+.time__panel--top::before, .flip-panel__face--front::before {
   content: "";
   display: block;
   position: absolute;
@@ -44,7 +44,7 @@ body {
   bottom: -3px;
   right: -3px;
 }
-.time-card__panel--front::after, .time-card__upper::after {
+.time__panel--top::after, .flip-panel__face--front::after {
   content: "";
   display: block;
   position: absolute;
@@ -56,7 +56,7 @@ body {
   left: -3px;
 }
 
-.time-card__panel--back::before, .time-card__lower::before {
+.time__panel--bottom::before, .flip-panel__face--back::before {
   content: "";
   display: block;
   position: absolute;
@@ -67,7 +67,7 @@ body {
   top: -3px;
   right: -3px;
 }
-.time-card__panel--back::after, .time-card__lower::after {
+.time__panel--bottom::after, .flip-panel__face--back::after {
   content: "";
   display: block;
   position: absolute;
@@ -81,23 +81,19 @@ body {
 
 @-webkit-keyframes card-flip {
   from {
-    transform: translateZ(0) rotateX(0deg);
-    perspective: 500px;
+    transform: rotateX(0deg);
   }
   to {
-    transform: translateZ(100px) rotateX(0.5turn);
-    perspective: 500px;
+    transform: rotateX(0.5turn);
   }
 }
 
 @keyframes card-flip {
   from {
-    transform: translateZ(0) rotateX(0deg);
-    perspective: 500px;
+    transform: rotateX(0deg);
   }
   to {
-    transform: translateZ(100px) rotateX(0.5turn);
-    perspective: 500px;
+    transform: rotateX(0.5turn);
   }
 }
 .launch {
@@ -133,7 +129,7 @@ body {
   width: 100%;
 }
 
-.time-card {
+.time {
   flex-shrink: 0;
   flex-basis: 21%;
   display: flex;
@@ -142,9 +138,8 @@ body {
   align-items: stretch;
   flex-wrap: nowrap;
   overflow: hidden;
-  transform-style: preserve-3d;
 }
-.time-card__container {
+.time__container {
   width: 100%;
   height: 60px;
   display: flex;
@@ -153,22 +148,58 @@ body {
   align-items: stretch;
   flex-wrap: nowrap;
   position: relative;
-  transform-style: preserve-3d;
 }
-.time-card__dynamic-panel {
+.time__panel {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.time__panel--top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #2c2c44;
+}
+.time__panel--bottom {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #343650;
+}
+.time__text {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.time__text--top {
+  top: 0;
+  left: 0;
+}
+.time__text--bottom {
+  bottom: 0;
+  left: 0;
+}
+.time__header {
+  margin: 15px 0 0;
+}
+
+.flip-panel {
   position: absolute;
   width: 100%;
   height: 50%;
   top: 0;
   left: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  overflow: hidden;
   transform-style: preserve-3d;
   transform-origin: bottom center;
-  perspective: 500px;
+  perspective: 600px;
+  z-index: 1;
 }
-.time-card__dynamic-panel:active {
+.flip-panel:hover {
   -webkit-animation-name: card-flip;
           animation-name: card-flip;
   -webkit-animation-direction: normal;
@@ -180,53 +211,24 @@ body {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-.time-card__panel {
+.flip-panel__face {
   width: 100%;
   height: 100%;
-  position: relative;
-  background-color: #2c2c44;
+  position: absolute;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.time-card__upper {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #2c2c44;
-  width: 100%;
-  height: 50%;
+          backface-visibility: hidden;
   overflow: hidden;
-  position: relative;
 }
-.time-card__lower {
-  width: 100%;
-  height: 50%;
+.flip-panel__face--back {
+  transform: rotateX(180deg);
+  background-color: #343650;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: #343650;
-  overflow: hidden;
-  position: relative;
 }
-.time-card__text {
-  position: absolute;
-  width: 100%;
-  height: 200%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  margin: 0;
-}
-.time-card__text--upper {
-  top: 0;
-  left: 0;
-}
-.time-card__text--lower {
-  bottom: 0;
-  left: 0;
-}
-.time-card__title {
-  margin: 15px 0 0;
+.flip-panel__face--front {
+  background-color: #2c2c44;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .footer {

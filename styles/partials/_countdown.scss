@@ -28,81 +28,38 @@
      }
 }
 
-.time-card{
+.time{
      flex-shrink: 0;
      flex-basis: 21%;
      @include flex(column);
      overflow: hidden;
-     transform-style: preserve-3d;
 
      &__container{
           width: 100%;
-          height: 60px;
+          height: 60px; //To make this responsive
           @include flex(column, center);
           position: relative;
-          transform-style: preserve-3d;
-     }
-
-     &__dynamic-panel{
-          position: absolute;
-          width: 100%;
-          height: 50%;
-          top:0;
-          left:0;
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-          overflow: hidden;
-          transform-style: preserve-3d;
-          transform-origin: bottom center;
-          perspective: 500px;
-          
-          &:active{
-               animation-name: card-flip;
-               animation-direction: normal;
-               animation-timing-function: linear;
-               animation-duration: 1s;
-               animation-fill-mode: forwards;
-          }
      }
 
      &__panel{
           width: 100%;
-          height: 100%;
+          height: 50%;
+          overflow: hidden;
           position: relative;
-          background-color: $card-upper;
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 
-          &--back{
+          &--top{
+               border-top-left-radius: 5px;
+               border-top-right-radius: 5px;
+               @extend %card-indents-bottom;
+               background-color: $card-upper;
+          }
+
+          &--bottom{
+               border-bottom-left-radius: 5px;
+               border-bottom-right-radius: 5px;
+               background-color: $card-lower;
                @extend %card-indents-top;
           }
-
-          &--front{
-               @extend %card-indents-bottom;
-          }
-          
-     }
-
-     &__upper{
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-          background-color: $card-upper;
-          width: 100%;
-          height: 50%;
-          overflow: hidden;
-          position: relative;
-          @extend %card-indents-bottom;
-     }
-
-     &__lower{
-          width: 100%;
-          height: 50%;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          background-color: $card-lower;
-          overflow: hidden;
-          position: relative;
-          @extend %card-indents-top;
      }
 
      &__text{
@@ -113,20 +70,64 @@
           @extend %time-text;
           margin: 0;
 
-          &--upper{
+          &--top{
                top: 0;
                left: 0;
           }
 
-          &--lower{
+          &--bottom{
                bottom: 0;
                left: 0;
           }
      }
 
-     &__title{
+     &__header{
           @extend %time-header;
           margin: spaceIncr(3) 0 0;
+     }
+}
+
+
+.flip-panel{
+     position: absolute;
+     width: 100%;
+     height: 50%;
+     top:0;
+     left:0;
+     transform-style: preserve-3d;
+     transform-origin: bottom center;
+     perspective: 600px;
+     z-index: 1;
+
+     &:hover{
+          animation-name: card-flip;
+          animation-direction: normal;
+          animation-timing-function: linear;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+     }
+
+     &__face{
+          width: 100%;
+          height: 100%;
+          position:absolute;
+          backface-visibility: hidden;
+          overflow: hidden;
+
+          &--back{
+               transform: rotateX(180deg);
+               @extend %card-indents-top;
+               background-color: $card-lower;
+               border-bottom-left-radius: 5px;
+               border-bottom-right-radius: 5px;
+          }
+
+          &--front{
+               @extend %card-indents-bottom; 
+               background-color: $card-upper;
+               border-top-left-radius: 5px;
+               border-top-right-radius: 5px;
+          }
      }
 }
 
