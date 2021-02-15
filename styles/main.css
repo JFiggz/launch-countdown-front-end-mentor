@@ -96,6 +96,17 @@ body {
     transform: rotateX(0.5turn);
   }
 }
+.animate {
+  -webkit-animation-name: card-flip;
+          animation-name: card-flip;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
 .launch {
   width: 100%;
   height: 100vh;
@@ -198,18 +209,6 @@ body {
   transform-origin: bottom center;
   perspective: 600px;
   z-index: 1;
-}
-.flip-panel:hover {
-  -webkit-animation-name: card-flip;
-          animation-name: card-flip;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 .flip-panel__face {
   width: 100%;

@@ -15,24 +15,31 @@
   <main class="launch">
 
     <div class="launch__container">
+      <form class="form">
+        <label for="date"></label>
+        <input name="date" id="date" type="date" aria-required="true" required />
+        <label for="time"></label>
+        <input name="time" id="time" type="time" aria-required="true" required />
+        <button type="submit">Set Date</button>
+      </form>
       <h1 class="launch__header">WE'RE LAUNCHING SOON</h1>
       <section class="launch__time-container">
 
         <div class="time">
           <div class="time__container">
             <span class="time__panel time__panel--top">
-              <p class="time__text time__text--top">XX</p>
+              <p class="time__text time__text--top text-back-days">00</p>
             </span>
             <div class="flip-panel">
               <span class="flip-panel__face flip-panel__face--back">
-                <p class="flip-panel__text time__text time__text--bottom">XX</p>
+                <p class="flip-panel__text time__text time__text--bottom text-back-days">00</p>
               </span>
               <span class="flip-panel__face flip-panel__face--front">
-                <p class="flip-panel__text time__text time__text--top">08</p>
+                <p class="flip-panel__text time__text time__text--top text-front-days">00</p>
               </span>
             </div>
             <span class="time__panel time__panel--bottom">
-              <p class="time__text time__text--bottom">08</p>
+              <p class="time__text time__text--bottom text-front-days">00</p>
             </span>
           </div>
           <h2 class="time__header">DAYS</h2>
@@ -41,18 +48,18 @@
         <div class="time">
           <div class="time__container">
             <span class="time__panel time__panel--top">
-              <p class="time__text time__text--top">XX</p>
+              <p class="time__text time__text--top text-back-hrs">00</p>
             </span>
             <div class="flip-panel">
               <span class="flip-panel__face flip-panel__face--back">
-                <p class="flip-panel__text time__text time__text--bottom">XX</p>
+                <p class="flip-panel__text time__text time__text--bottom text-back-hrs">00</p>
               </span>
               <span class="flip-panel__face flip-panel__face--front">
-                <p class="flip-panel__text time__text time__text--top">08</p>
+                <p class="flip-panel__text time__text time__text--top text-front-hrs">00</p>
               </span>
             </div>
             <span class="time__panel time__panel--bottom">
-              <p class="time__text time__text--bottom">08</p>
+              <p class="time__text time__text--bottom text-front-hrs">00</p>
             </span>
           </div>
           <h2 class="time__header">HOURS</h2>
@@ -61,18 +68,18 @@
         <div class="time">
           <div class="time__container">
             <span class="time__panel time__panel--top">
-              <p class="time__text time__text--top">XX</p>
+              <p class="time__text time__text--top text-back-min">00</p>
             </span>
             <div class="flip-panel">
               <span class="flip-panel__face flip-panel__face--back">
-                <p class="flip-panel__text time__text time__text--bottom">XX</p>
+                <p class="flip-panel__text time__text time__text--bottom text-back-min">00</p>
               </span>
               <span class="flip-panel__face flip-panel__face--front">
-                <p class="flip-panel__text time__text time__text--top">08</p>
+                <p class="flip-panel__text time__text time__text--top text-front-min">00</p>
               </span>
             </div>
             <span class="time__panel time__panel--bottom">
-              <p class="time__text time__text--bottom">08</p>
+              <p class="time__text time__text--bottom text-front-min">00</p>
             </span>
           </div>
           <h2 class="time__header">MINUTES</h2>
@@ -81,18 +88,18 @@
         <div class="time">
           <div class="time__container">
             <span class="time__panel time__panel--top">
-              <p class="time__text time__text--top">XX</p>
+              <p class="time__text time__text--top text-back-sec">00</p>
             </span>
             <div class="flip-panel">
               <span class="flip-panel__face flip-panel__face--back">
-                <p class="flip-panel__text time__text time__text--bottom">XX</p>
+                <p class="flip-panel__text time__text time__text--bottom text-back-sec">00</p>
               </span>
               <span class="flip-panel__face flip-panel__face--front">
-                <p class="flip-panel__text time__text time__text--top">08</p>
+                <p class="flip-panel__text time__text time__text--top text-front-sec">00</p>
               </span>
             </div>
             <span class="time__panel time__panel--bottom">
-              <p class="time__text time__text--bottom">08</p>
+              <p class="time__text time__text--bottom text-front-sec">00</p>
             </span>
           </div>
           <h2 class="time__header">SECONDS</h2>
@@ -123,7 +130,7 @@
     </footer>
   </main>
 
-
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>

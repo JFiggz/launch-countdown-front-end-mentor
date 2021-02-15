@@ -7,3 +7,11 @@
           transform: rotateX(0.5turn);
      }
 }
+
+
+.animate{
+     animation-name: card-flip;
+     animation-direction: normal;
+     animation-timing-function: ease-in;
+     animation-duration: 0.5s;
+}
