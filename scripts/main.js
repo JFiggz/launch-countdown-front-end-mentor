@@ -86,6 +86,7 @@ const triggerSlide = () => {
 
 document.querySelector('.form').addEventListener('submit', (e) => {
      e.preventDefault();
+     clearInterval(countdownTimer);
 
      //Retrieve values from events
      const dateString = e.target.date.value;
