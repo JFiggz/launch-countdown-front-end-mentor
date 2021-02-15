@@ -13,7 +13,7 @@
 
 <body>
   <main class="launch">
-    <section class="set-time">
+    <section class="set-time" aria-expanded="true">
       <form class="form">
         <label for="date" class="form__label">Date</label>
         <input name="date" id="date" class="form__date" type="date" aria-required="true" required />
@@ -21,7 +21,7 @@
         <input name="time" id="time" class="form__time" type="time" aria-required="true" required />
         <button type="submit" class="btn">Start Countdown</button>
       </form>
-      <span class="set-time__toggle-view" role="button" tabindex="0" aria-pressed="false" aria-expanded="true">
+      <span class="set-time__toggle-view" role="button" tabindex="0" aria-pressed="false">
         <img src="./images/icon-expand-up.svg" alt="Expanding drop down trigger for setting timer"
           class="set-time__img">
         <img src="./images/icon-expand-up.svg" alt="Expanding drop down trigger for setting timer"

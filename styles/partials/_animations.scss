@@ -14,10 +14,41 @@
      }
 }
 
+@keyframes slide-up{
+     from{
+          transform: translateY(0);
+     }
+     to {
+          transform: translateY(-165px);
+     }
+}
 
-.animate{
+@keyframes slide-down{
+     from{
+          transform: translateY(-165px);
+     }
+     to {
+          transform: translateY(0);
+     }
+}
+
+
+.animate-card{
      animation-name: card-flip;
-     animation-direction: normal;
      animation-timing-function: ease-in;
      animation-duration: 0.5s;
+}
+
+.animate-dd-up{
+     animation-name: slide-up;
+     animation-timing-function: ease-out;
+     animation-duration: 0.5s;
+     animation-fill-mode: forwards;
+}
+
+.animate-dd-down{
+     animation-name: slide-down;
+     animation-timing-function: ease-out;
+     animation-duration: 0.5s;
+     animation-fill-mode: forwards;
 }

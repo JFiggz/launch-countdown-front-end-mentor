@@ -23,8 +23,8 @@ const calcTimeDifference = (endTime) => {
 //Pass in the panel to trigger the animation on
 const triggerAnimate = (panelNum) => {
      const panel = document.querySelectorAll('.flip-panel');
-     panel[panelNum].classList.add('animate');
-     setTimeout(() => { panel[panelNum].classList.remove('animate'); }, 750);
+     panel[panelNum].classList.add('animate-card');
+     setTimeout(() => { panel[panelNum].classList.remove('animate-card'); }, 750);
 };
 
 //Set time on panels and trigger animation for panels that have changed
@@ -63,6 +63,27 @@ const setPanelTime = (timeObj) => {
      };
 };
 
+//Animate the slider for setting date, set ARIA attributes and slide up/down based on current position
+const triggerSlide = () => {
+     const setTimeSlide = document.querySelector('.set-time');
+     const ddArrows = document.querySelectorAll('.set-time__img');
+     const toggleButton = document.querySelector('.set-time__toggle-view');
+
+     if (!setTimeSlide.classList.contains("animate-dd-up")) {
+          setTimeSlide.classList.remove("animate-dd-down");
+          setTimeSlide.classList.add("animate-dd-up");
+          ddArrows.forEach(e => e.setAttribute("src", "./images/icon-expand-down.svg"));
+          setTimeSlide.setAttribute("aria-expanded", "false");
+          return;
+     }
+
+     setTimeSlide.classList.remove("animate-dd-up");
+     setTimeSlide.classList.add("animate-dd-down");
+     ddArrows.forEach(e => e.setAttribute("src", "./images/icon-expand-up.svg"));
+     setTimeSlide.setAttribute("aria-expanded", "true");
+
+};
+
 document.querySelector('.form').addEventListener('submit', (e) => {
      e.preventDefault();
 
@@ -79,7 +100,16 @@ document.querySelector('.form').addEventListener('submit', (e) => {
      fullDate.setHours(timeArr[0], timeArr[1]);
 
      countdownTimer = setInterval(() => { setPanelTime(calcTimeDifference(fullDate)) }, 1000);
+     triggerSlide();
 });
+
+
+document.querySelector('.set-time__toggle-view').addEventListener('click', (e) => {
+     triggerSlide();
+});
+
+
+
 
 
 

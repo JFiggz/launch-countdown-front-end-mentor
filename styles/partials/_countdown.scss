@@ -32,18 +32,18 @@
      width:80vw;
      position: fixed;
      top: 0;
-     left: 50%;
-     transform: translateX(-50%);
+     left: calc(50% - (80vw / 2));
      padding: spaceIncr(3) spaceIncr(3) spaceIncr();
      background-color: $drop-down-bg;
      border-bottom-left-radius: 2.5px;
      border-bottom-right-radius: 2.5px;
+     transition: transform 0.5s ease-out;
 
      &__toggle-view{
           display: block;
           padding:  0 spaceIncr();
           @include flex(row,space-between, center);
-          margin-top: spaceIncr(2);
+          margin-top: spaceIncr();
           border: 1px solid transparent;
           border-radius: 2.5px;
 
