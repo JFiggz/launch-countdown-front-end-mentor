@@ -1,15 +1,21 @@
-// Primary colour variables
+// Primary colour variables per FE Mentor
 $default-light: hsl(0, 0%, 100%);
 $primary-text: rgba(251,96,135, 0.7);
 $secondary-text: hsl(237, 18%, 59%);
 $light-accent: hsl(236, 21%, 26%);
 $darker-accent: hsl(235, 16%, 14%);
 $darkest-accent: hsl(234, 17%, 12%);
+
+//Specific colour variables
+$drop-down-bg: #30243a;
 $footer: #30243a;
 $card-lower:hsl(236, 21%, 26%);
 $card-upper: #2c2c44;
 $icons: hsl(237, 18%, 59%);
 $icons-hover: hsl(345, 95%, 68%);
+$btn-bg: #2c2c44;
+$btn-border: hsl(236, 21%, 26%);
+$btn-active: hsl(345, 95%, 68%);
 
 
 //Padding spaceing

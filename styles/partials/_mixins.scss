@@ -20,7 +20,7 @@
      }
 }
 
-@function spaceIncr($incr: 0){
+@function spaceIncr($incr: 1){
      $result: $padding * $incr;
      @return $result;
 }

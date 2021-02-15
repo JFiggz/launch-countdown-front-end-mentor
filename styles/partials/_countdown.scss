@@ -28,6 +28,66 @@
      }
 }
 
+.set-time{
+     width:80vw;
+     position: fixed;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     padding: spaceIncr(3) spaceIncr(3) spaceIncr();
+     background-color: $drop-down-bg;
+     border-bottom-left-radius: 2.5px;
+     border-bottom-right-radius: 2.5px;
+
+     &__toggle-view{
+          display: block;
+          padding:  0 spaceIncr();
+          @include flex(row,space-between, center);
+          margin-top: spaceIncr(2);
+          border: 1px solid transparent;
+          border-radius: 2.5px;
+
+          &:hover{
+               border: 1px solid $btn-active;
+          }
+      
+          &:focus{
+               border: 1px solid $btn-active;
+               outline: none;
+          }
+     
+          &:active{
+               background-color: $btn-active;
+               border: 1px solid $btn-border;
+               outline: none;
+          }
+     }
+
+     &__img{
+          width: 30px;
+          height: 30px;
+     }
+}
+
+.form{
+     @include flex(column);
+
+     &__label{
+          @extend %label-text;
+          margin: 0 0 spaceIncr(1);
+     }
+
+     &__date{
+          @extend %input-base;
+          margin-bottom: spaceIncr(2);
+     }
+
+     &__time{
+          @extend %input-base;
+          margin-bottom: spaceIncr(2);
+     }
+}
+
 .time{
      flex-shrink: 0;
      flex-basis: 21%;

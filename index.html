@@ -7,21 +7,29 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Launch countdown timer</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
   <main class="launch">
+    <section class="set-time">
+      <form class="form">
+        <label for="date" class="form__label">Date</label>
+        <input name="date" id="date" class="form__date" type="date" aria-required="true" required />
+        <label for="time" class="form__label">Time</label>
+        <input name="time" id="time" class="form__time" type="time" aria-required="true" required />
+        <button type="submit" class="btn">Start Countdown</button>
+      </form>
+      <span class="set-time__toggle-view" role="button" tabindex="0" aria-pressed="false" aria-expanded="true">
+        <img src="./images/icon-expand-up.svg" alt="Expanding drop down trigger for setting timer"
+          class="set-time__img">
+        <img src="./images/icon-expand-up.svg" alt="Expanding drop down trigger for setting timer"
+          class="set-time__img">
+      </span>
+    </section>
 
     <div class="launch__container">
-      <form class="form">
-        <label for="date"></label>
-        <input name="date" id="date" type="date" aria-required="true" required />
-        <label for="time"></label>
-        <input name="time" id="time" type="time" aria-required="true" required />
-        <button type="submit">Set Date</button>
-      </form>
       <h1 class="launch__header">WE'RE LAUNCHING SOON</h1>
       <section class="launch__time-container">
 

@@ -1,0 +1,23 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './extends' as *;
+
+.btn{
+     @extend %btn-text;
+     background-color: $btn-bg;
+     border: 1px solid $btn-border;
+     outline: none;
+     border-radius: 2.5px;
+     padding: spaceIncr() spaceIncr(2);
+     
+     &:focus{
+          border: 1px solid $btn-active;
+          outline: none;
+     }
+
+     &:active{
+          background-color: $btn-active;
+          border: 1px solid $btn-border;
+          outline: none;
+     }
+}

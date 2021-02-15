@@ -1,9 +1,11 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 %main-header{
      color: $default-light;
      font-size: 1.15rem;
      letter-spacing: 0.3rem;
+     font-weight: 700;
      text-align: center;
 }
 
@@ -11,6 +13,7 @@
      color: $secondary-text;
      font-size: 0.45rem;
      letter-spacing: 0.18rem;
+     font-weight: 700;
      text-align: center;
 }
 
@@ -18,6 +21,21 @@
      color: $primary-text;
      font-size: 2rem;
      letter-spacing: 0.01rem;
+     font-weight: 700;
+}
+
+%label-text{
+     color: $secondary-text;
+     font-size: 0.8rem;
+     letter-spacing: 0.01rem;
+     font-weight: 700;
+}
+
+%btn-text{
+     color: $default-light;
+     font-size: 0.8rem;
+     letter-spacing: 0.1rem;
+     font-weight: 700;
 }
 
 %card-indents-bottom{
@@ -69,5 +87,29 @@
           background-color: black;
           top: -3px;
           left: -3px;
+     }
+}
+
+%input-base{
+     background-color: $light-accent;
+     border: 1px solid $light-accent;
+     outline: none;
+     color: $default-light;
+     padding: spaceIncr(1) spaceIncr(2);
+     font-family: inherit;
+     font-weight: 400;
+     font-size: 0.7rem;
+     border-radius: 2.5px; 
+
+     &:focus{
+          border: 1px solid $btn-active;
+          outline: none;
+          border-radius: 2.5px; 
+     }
+
+     &:active{
+          border: 1px solid $btn-border;
+          outline: none;
+          border-radius: 2.5px;
      }
 }
