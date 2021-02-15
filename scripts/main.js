@@ -1,8 +1,14 @@
+//Global Variables
+let fullDate, countdownTimer;
 
 //Calculate and return the difference in time between the selected time and current time
 const calcTimeDifference = (endTime) => {
-     const currentTime = new Date();
+     const currentTime = Date.now();
      const timeDifference = endTime - currentTime;
+
+     if (timeDifference <= 0) {
+          clearInterval(countdownTimer);
+     }
 
      const differenceObj = {
           days: Math.floor(timeDifference / 86400000),
@@ -17,10 +23,11 @@ const calcTimeDifference = (endTime) => {
 //Pass in the panel to trigger the animation on
 const triggerAnimate = (panelNum) => {
      const panel = document.querySelectorAll('.flip-panel');
-     panel[panelNum].classList.toggle('animate');
+     panel[panelNum].classList.add('animate');
+     setTimeout(() => { panel[panelNum].classList.remove('animate'); }, 750);
 };
 
-//Set time on panels
+//Set time on panels and trigger animation for panels that have changed
 const setPanelTime = (timeObj) => {
      const backTextDays = document.querySelectorAll('.text-back-days');
      const frontTextDays = document.querySelectorAll('.text-front-days');
@@ -31,26 +38,29 @@ const setPanelTime = (timeObj) => {
      const backTextSec = document.querySelectorAll('.text-back-sec');
      const frontTextSec = document.querySelectorAll('.text-front-sec');
 
-     if (frontTextDays[0] !== timeObj.days) {
-          backTextDays.forEach(e => e.innerText = timeObj.days - 1 <= 0 ? 0 : timeObj.days - 1);
-          frontTextDays.forEach(e => e.innerText = timeObj.days <= 0 ? 0 : timeObj.days);
+     if (parseInt(frontTextDays[0].innerText) !== timeObj.days) {
+          backTextDays.forEach(e => e.innerText = timeObj.days <= 0 ? 0 : timeObj.days);
+          triggerAnimate(0);
+          setTimeout(() => { frontTextDays.forEach(e => e.innerText = timeObj.days <= 0 ? 0 : timeObj.days) }, 375);
      };
 
-     if (frontTextHr[0] !== timeObj.hours) {
-          backTextHr.forEach(e => e.innerText = timeObj.hours - 1 <= 0 ? 0 : timeObj.hours - 1);
-          frontTextHr.forEach(e => e.innerText = timeObj.hours <= 0 ? 0 : timeObj.hours);
+     if (parseInt(frontTextHr[0].innerText) !== timeObj.hours) {
+          backTextHr.forEach(e => e.innerText = timeObj.hours <= 0 ? 0 : timeObj.hours);
+          triggerAnimate(1);
+          setTimeout(() => { frontTextHr.forEach(e => e.innerText = timeObj.hours <= 0 ? 0 : timeObj.hours) }, 375);
      };
 
-     if (frontTextMin[0] !== timeObj.minutes) {
-          backTextMin.forEach(e => e.innerText = timeObj.minutes - 1 <= 0 ? 0 : timeObj.minutes - 1);
-          frontTextMin.forEach(e => e.innerText = timeObj.minutes <= 0 ? 0 : timeObj.minutes);
+     if (parseInt(frontTextMin[0].innerText) !== timeObj.minutes) {
+          backTextMin.forEach(e => e.innerText = timeObj.minutes <= 0 ? 0 : timeObj.minutes);
+          triggerAnimate(2);
+          setTimeout(() => { frontTextMin.forEach(e => e.innerText = timeObj.minutes <= 0 ? 0 : timeObj.minutes) }, 375);
      };
 
-     if (frontTextSec[0] !== timeObj.seconds) {
-          backTextSec.forEach(e => e.innerText = timeObj.seconds - 1 <= 0 ? 0 : timeObj.seconds - 1);
-          frontTextSec.forEach(e => e.innerText = timeObj.seconds <= 0 ? 0 : timeObj.seconds);
+     if (parseInt(frontTextSec[0].innerText) !== timeObj.seconds) {
+          backTextSec.forEach(e => e.innerText = timeObj.seconds <= 0 ? 0 : timeObj.seconds);
+          triggerAnimate(3);
+          setTimeout(() => { frontTextSec.forEach(e => e.innerText = timeObj.seconds <= 0 ? 0 : timeObj.seconds) }, 375);
      };
-
 };
 
 document.querySelector('.form').addEventListener('submit', (e) => {
@@ -64,12 +74,12 @@ document.querySelector('.form').addEventListener('submit', (e) => {
      const dateArr = dateString.split('-');
      const timeArr = timeString.split(':');
 
-     const fullDate = new Date();
-
+     fullDate = new Date();
      fullDate.setFullYear(dateArr[0], dateArr[1] - 1, dateArr[2]);
      fullDate.setHours(timeArr[0], timeArr[1]);
 
-
-     setPanelTime(calcTimeDifference(fullDate));
+     countdownTimer = setInterval(() => { setPanelTime(calcTimeDifference(fullDate)) }, 1000);
 });
+
+
 

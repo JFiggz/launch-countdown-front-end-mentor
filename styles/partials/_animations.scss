@@ -1,10 +1,16 @@
 @keyframes card-flip{
-     from{
+     0%{
           transform: rotateX(0deg);
+          perspective: 600px;
      }
 
-     to{
+     50%{
+          perspective: 400px;
+     }
+
+     100%{
           transform: rotateX(0.5turn);
+          perspective: 600px;
      }
 }
 
