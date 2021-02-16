@@ -20,6 +20,18 @@ body {
   font-weight: 700;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .launch__header {
+    font-size: 1.3rem;
+    letter-spacing: 0.4rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .launch__header {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+  }
+}
 
 .time__header {
   color: #8486a9;
@@ -28,12 +40,36 @@ body {
   font-weight: 700;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .time__header {
+    font-size: 0.675rem;
+    letter-spacing: 0.25rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .time__header {
+    font-size: 0.9rem;
+    letter-spacing: 0.35rem;
+  }
+}
 
 .time__text {
   color: rgba(251, 96, 135, 0.7);
   font-size: 2rem;
   letter-spacing: 0.01rem;
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .time__text {
+    font-size: 3.5rem;
+    letter-spacing: 0.025rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .time__text {
+    font-size: 4.75rem;
+    letter-spacing: 0.05rem;
+  }
 }
 
 .form__label {
@@ -42,12 +78,53 @@ body {
   letter-spacing: 0.01rem;
   font-weight: 700;
 }
+@media screen and (min-width: 768px) {
+  .form__label {
+    font-size: 0.95rem;
+    letter-spacing: 0.05rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .form__label {
+    font-size: 1.15rem;
+    letter-spacing: 0.05rem;
+  }
+}
 
 .btn {
   color: white;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    font-size: 0.95rem;
+    letter-spacing: 0.05rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .btn {
+    font-size: 1.15rem;
+    letter-spacing: 0.05rem;
+  }
+}
+
+.form__date, .form__time {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .form__date, .form__time {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .form__date, .form__time {
+    font-size: 1rem;
+  }
 }
 
 .time__panel--top::before, .flip-panel__face--front::before {
@@ -100,11 +177,7 @@ body {
   background-color: #343650;
   border: 1px solid #343650;
   outline: none;
-  color: white;
   padding: 5px 10px;
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 0.7rem;
   border-radius: 2.5px;
 }
 .form__date:focus, .form__time:focus {
@@ -240,6 +313,16 @@ body {
 .launch__header {
   margin: 0 0 45px;
 }
+@media screen and (min-width: 768px) {
+  .launch__header {
+    margin: 0 0 75px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .launch__header {
+    margin: 0 0 110px;
+  }
+}
 .launch__container {
   height: 70vh;
   display: flex;
@@ -247,7 +330,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 35px 35px 0;
+  padding: 35px 0 0;
+  width: 81.333%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .launch__time-container {
   display: flex;
@@ -297,6 +383,12 @@ body {
   width: 30px;
   height: 30px;
 }
+@media screen and (min-width: 768px) {
+  .set-time {
+    width: 500px;
+    left: calc(50% - 250px);
+  }
+}
 
 .form {
   display: flex;
@@ -334,6 +426,19 @@ body {
   align-items: stretch;
   flex-wrap: nowrap;
   position: relative;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.2));
+}
+@media screen and (min-width: 768px) {
+  .time__container {
+    height: 100px;
+    filter: drop-shadow(0 7px 0 rgba(0, 0, 0, 0.2));
+  }
+}
+@media screen and (min-width: 1440px) {
+  .time__container {
+    height: 140px;
+    filter: drop-shadow(0 9px 0 rgba(0, 0, 0, 0.2));
+  }
 }
 .time__panel {
   width: 100%;
@@ -372,6 +477,16 @@ body {
 }
 .time__header {
   margin: 15px 0 0;
+}
+@media screen and (min-width: 768px) {
+  .time__header {
+    margin: 20px 0 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .time__header {
+    margin: 30px 0 0;
+  }
 }
 
 .flip-panel {
@@ -434,12 +549,22 @@ body {
   margin: 0 15px;
 }
 .footer__icon {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
 }
 .footer__icon path {
   fill: #8486a9;
 }
 .footer__icon:hover path {
   fill: #fb6087;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding: 100px;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -7,6 +7,16 @@
      letter-spacing: 0.3rem;
      font-weight: 700;
      text-align: center;
+
+     @include tablet{
+          font-size: 1.3rem;
+          letter-spacing: 0.4rem;
+     }
+
+     @include desktop{
+          font-size: 1.5rem;
+          letter-spacing: 0.5rem;
+     }
 }
 
 %time-header{
@@ -15,6 +25,16 @@
      letter-spacing: 0.18rem;
      font-weight: 700;
      text-align: center;
+
+     @include tablet{
+          font-size: 0.675rem;
+          letter-spacing: 0.25rem;
+     }
+
+     @include desktop{
+          font-size: 0.9rem;
+          letter-spacing: 0.35rem;
+     }
 }
 
 %time-text{
@@ -22,6 +42,16 @@
      font-size: 2rem;
      letter-spacing: 0.01rem;
      font-weight: 700;
+
+     @include tablet{
+          font-size: 3.5rem;
+          letter-spacing: 0.025rem;
+     }
+
+     @include desktop{
+          font-size: 4.75rem;
+          letter-spacing: 0.05rem;
+     }
 }
 
 %label-text{
@@ -29,6 +59,16 @@
      font-size: 0.8rem;
      letter-spacing: 0.01rem;
      font-weight: 700;
+
+     @include tablet{
+          font-size: 0.95rem;
+          letter-spacing: 0.05rem;
+     }
+
+     @include desktop{
+          font-size: 1.15rem;
+          letter-spacing: 0.05rem;
+     }
 }
 
 %btn-text{
@@ -36,6 +76,29 @@
      font-size: 0.8rem;
      letter-spacing: 0.1rem;
      font-weight: 700;
+     @include tablet{
+          font-size: 0.95rem;
+          letter-spacing: 0.05rem;
+     }
+
+     @include desktop{
+          font-size: 1.15rem;
+          letter-spacing: 0.05rem;
+     }
+}
+
+%input-text{
+     font-family: inherit;
+     font-weight: 400;
+     font-size: 0.7rem;
+     color: $default-light;
+     @include tablet{
+          font-size: 0.85rem;
+     }
+
+     @include desktop{
+          font-size: 1rem;
+     }
 }
 
 %card-indents-bottom{
@@ -94,12 +157,9 @@
      background-color: $light-accent;
      border: 1px solid $light-accent;
      outline: none;
-     color: $default-light;
      padding: spaceIncr(1) spaceIncr(2);
-     font-family: inherit;
-     font-weight: 400;
-     font-size: 0.7rem;
      border-radius: 2.5px; 
+     @extend %input-text;
 
      &:focus{
           border: 1px solid $btn-active;

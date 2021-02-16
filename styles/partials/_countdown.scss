@@ -14,12 +14,23 @@
      &__header{
           @extend %main-header;
           margin: 0 0 spaceIncr(9);
+
+          @include tablet{
+               margin: 0 0 spaceIncr(15);
+          }
+          
+          @include desktop{
+               margin: 0 0 spaceIncr(22);
+          }
      }
 
      &__container{
           height: 70vh;
           @include flex(column, center,center);
-          padding: spaceIncr(7) spaceIncr(7) 0;
+          padding: spaceIncr(7) 0 0;
+          width: 81.333%;
+          max-width: 700px;
+          margin: 0 auto;
      }
 
      &__time-container{
@@ -67,6 +78,11 @@
           width: 30px;
           height: 30px;
      }
+
+     @include tablet{
+          width: $dd-width;
+          left: calc(50% - #{$dd-width / 2});
+     }
 }
 
 .form{
@@ -96,9 +112,22 @@
 
      &__container{
           width: 100%;
-          height: 60px; //To make this responsive
+          height: $card-mobile;
           @include flex(column, center);
           position: relative;
+          filter:drop-shadow(0 4px 0 rgba(0,0,0,0.2));
+
+          
+          @include tablet{
+               height: $card-tablet;
+               filter:drop-shadow(0 7px 0 rgba(0,0,0,0.2));
+          }
+
+          
+          @include desktop{
+               height: $card-desktop;
+               filter:drop-shadow(0 9px 0 rgba(0,0,0,0.2));
+          }
      }
 
      &__panel{
@@ -144,6 +173,14 @@
      &__header{
           @extend %time-header;
           margin: spaceIncr(3) 0 0;
+
+          @include tablet{
+               margin: spaceIncr(4) 0 0;
+          }
+          
+          @include desktop{
+               margin: spaceIncr(6) 0 0;
+          }
      }
 }
 
@@ -203,8 +240,8 @@
      }
 
      &__icon{
-          width: 25px;
-          height: 25px;
+          width: 24px;
+          height: 24px;
 
           path{
                fill: $icons;
@@ -215,5 +252,13 @@
                     fill: $icons-hover;
                }
           }
+     }
+
+     @include tablet{
+          padding: spaceIncr(12);
+     }
+     
+     @include desktop{
+          padding: spaceIncr(20);
      }
 }
