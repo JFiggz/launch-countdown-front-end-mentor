@@ -354,6 +354,7 @@ body {
   border-bottom-left-radius: 2.5px;
   border-bottom-right-radius: 2.5px;
   transition: transform 0.5s ease-out;
+  z-index: 100;
 }
 .set-time__toggle-view {
   display: block;
@@ -526,7 +527,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 30vh;
-  padding: 35px;
+  padding: 0 0 25px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -558,13 +559,30 @@ body {
 .footer__icon:hover path {
   fill: #fb6087;
 }
+.footer__attribution {
+  width: 81.333%;
+  max-width: 700px;
+  margin-top: 10px;
+  color: #8486a9;
+  font-size: 0.7rem;
+  text-align: center;
+}
+.footer__attribution a {
+  color: #fb6087;
+}
+@media screen and (min-width: 768px) {
+  .footer__attribution {
+    margin-top: 20px;
+    font-size: 0.8rem;
+  }
+}
 @media screen and (min-width: 768px) {
   .footer {
-    padding: 60px;
+    padding: 0 0 30px;
   }
 }
 @media screen and (min-width: 1440px) {
   .footer {
-    padding: 100px;
+    padding: 0 0 60px;
   }
 }/*# sourceMappingURL=main.css.map */

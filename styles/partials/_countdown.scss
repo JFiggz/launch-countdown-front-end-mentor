@@ -49,6 +49,7 @@
      border-bottom-left-radius: 2.5px;
      border-bottom-right-radius: 2.5px;
      transition: transform 0.5s ease-out;
+     z-index: 100;
 
      &__toggle-view{
           display: block;
@@ -227,7 +228,7 @@
      background-repeat: no-repeat;
      background-size: cover;
      height: 30vh;
-     padding: spaceIncr(7);
+     padding: 0 0 spaceIncr(5);
      @include flex(column, flex-end, center, wrap);
 
      &__social-container{
@@ -254,11 +255,30 @@
           }
      }
 
+     &__attribution{
+          width: 81.333%;
+          max-width: 700px;
+          margin-top: spaceIncr(2);
+          color: $icons;
+          font-size: 0.7rem;
+          text-align: center;
+
+          a{
+               color: $icons-hover;
+          }
+
+          @include tablet{
+               margin-top: spaceIncr(4);
+               font-size: 0.8rem;
+          }
+          
+     }
+
      @include tablet{
-          padding: spaceIncr(12);
+          padding: 0 0 spaceIncr(6);
      }
      
      @include desktop{
-          padding: spaceIncr(20);
+          padding: 0 0 spaceIncr(12);
      }
 }
