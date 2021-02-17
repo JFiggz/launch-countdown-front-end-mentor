@@ -19,13 +19,13 @@
           transform: translateY(0);
      }
      to {
-          transform: translateY(-165px);
+          transform: translateY(calc(-100% + 42px));
      }
 }
 
 @keyframes slide-down{
      from{
-          transform: translateY(-165px);
+          transform: translateY(calc(-100% + 42px));
      }
      to {
           transform: translateY(0);

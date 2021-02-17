@@ -240,7 +240,7 @@ body {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-165px);
+    transform: translateY(calc(-100% + 42px));
   }
 }
 @keyframes slide-up {
@@ -248,12 +248,12 @@ body {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-165px);
+    transform: translateY(calc(-100% + 42px));
   }
 }
 @-webkit-keyframes slide-down {
   from {
-    transform: translateY(-165px);
+    transform: translateY(calc(-100% + 42px));
   }
   to {
     transform: translateY(0);
@@ -261,7 +261,7 @@ body {
 }
 @keyframes slide-down {
   from {
-    transform: translateY(-165px);
+    transform: translateY(calc(-100% + 42px));
   }
   to {
     transform: translateY(0);
